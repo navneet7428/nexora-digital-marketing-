@@ -1,0 +1,40 @@
+{
+  "folders": [
+    { "name": "NEXORA CLIENT", "path": "client" },
+    { "name": "NEXORA SERVER", "path": "server" }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    "files.associations": { "*.jsx": "javascriptreact" },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "*.jsx": "${capture}.module.css",
+      "vite.config.*": "package.json, index.html",
+      ".env.example": ".env"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dsznajder.es7-react-js-snippets",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "mongodb.mongodb-vscode",
+      "rangav.vscode-thunder-client",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "bradlc.vscode-tailwindcss"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  }
+}
