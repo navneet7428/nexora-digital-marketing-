@@ -11,6 +11,7 @@ const links = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen,   setIsOpen]   = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,6 +43,36 @@ export default function Navbar() {
       <button className={styles.cta} onClick={() => navigate('/contact')}>
         GET STARTED
       </button>
+
+      {/* ← was missing: hamburger + mobile menu */}
+      <button
+        className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
+        onClick={() => setIsOpen(o => !o)}
+        aria-label="Toggle menu"
+      >
+        <span /><span /><span />
+      </button>
+
+      <div className={`${styles.mobileMenu} ${isOpen ? styles.menuOpen : ''}`}>
+        {links.map(l => (
+          <NavLink
+            key={l.to}
+            to={l.to}
+            end={l.to === '/'}
+            className={({ isActive }) =>
+              `${styles.mobileLink} ${isActive ? styles.active : ''}`}
+            onClick={() => setIsOpen(false)}
+          >
+            {l.label}
+          </NavLink>
+        ))}
+        <button
+          className={styles.cta}
+          onClick={() => { navigate('/contact'); setIsOpen(false); }}
+        >
+          GET STARTED
+        </button>
+      </div>
     </nav>
   );
 }

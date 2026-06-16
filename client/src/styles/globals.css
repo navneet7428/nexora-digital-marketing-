@@ -152,3 +152,78 @@ body::before {
 /* Admin reset */
 input, textarea, select, button { font-family: inherit; }
 a { color: inherit; }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE UTILITIES
+   ════════════════════════════════════════════ */
+
+/* Touch devices: no hover-driven custom cursor, restore native pointer */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+/* Section padding scales */
+.pad-section     { padding: 120px 80px; }
+.pad-section-md  { padding: 100px 80px; }
+.pad-section-cta { padding: 160px 40px; }
+.pad-page-header { padding: 180px 80px 100px; }
+.pad-svc-block   { padding: 100px 80px; }
+.pad-dashboard   { padding: 100px 60px 60px; }
+
+@media (max-width: 900px) {
+  .pad-section, .pad-section-md, .pad-svc-block { padding: 80px 40px; }
+  .pad-page-header { padding: 140px 40px 64px; }
+  .pad-dashboard   { padding: 96px 32px 40px; }
+}
+@media (max-width: 600px) {
+  .pad-section, .pad-section-md, .pad-svc-block { padding: 64px 24px; }
+  .pad-section-cta { padding: 96px 24px; }
+  .pad-page-header { padding: 120px 20px 48px; }
+  .pad-dashboard   { padding: 96px 20px 40px; }
+}
+
+/* Two equal columns that stack below tablet width */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr !important; gap: 48px; direction: ltr !important; }
+}
+
+/* Services cards auto-fill grid */
+.grid-services { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+
+/* 4-up stat grids -> 2 columns below tablet width */
+.grid-stats-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+@media (max-width: 900px) { .grid-stats-4 { grid-template-columns: repeat(2,1fr); gap: 24px; } }
+@media (max-width: 420px) { .grid-stats-4 { gap: 16px; } }
+
+/* 3-up case study grid */
+.grid-cases-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+@media (max-width: 900px) { .grid-cases-3 { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 600px) { .grid-cases-3 { grid-template-columns: 1fr; } }
+
+/* Admin dashboard 4-up stat grid */
+.grid-dash-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+@media (max-width: 768px) { .grid-dash-4 { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 420px) { .grid-dash-4 { grid-template-columns: 1fr; } }
+
+/* Contact form name/email row */
+.grid-contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+@media (max-width: 560px) { .grid-contact-row { grid-template-columns: 1fr; gap: 0; } }
+
+/* Contact form card */
+.contact-card { padding: 56px 60px; }
+@media (max-width: 560px) { .contact-card { padding: 36px 20px; } }
+
+/* Site footer */
+.site-footer { padding: 60px 80px; }
+@media (max-width: 768px) {
+  .site-footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+}
+
+/* Process page: pinned horizontal-scroll section padding + progress bar insets */
+.proc-sticky   { padding: 0 80px; }
+.proc-progress { left: 80px; right: 80px; }
+@media (max-width: 768px) {
+  .proc-sticky   { padding: 0 24px; }
+  .proc-progress { left: 24px; right: 24px; }
+}

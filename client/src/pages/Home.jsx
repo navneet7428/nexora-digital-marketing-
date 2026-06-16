@@ -88,13 +88,13 @@ export default function Home() {
       </div>
 
       {/* SERVICES GRID */}
-      <section style={{ padding: '120px 80px' }}>
+      <section className="pad-section">
         <div className="section-inner">
           <div style={{ marginBottom: '72px' }}>
             <p className="eyebrow">CAPABILITIES</p>
             <h2 className="section-title" style={{ maxWidth: '560px' }}>The full-stack intelligence platform.</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px,1fr))', gap: '24px' }}>
+          <div className="grid-services">
             {services
               ? services.map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)
               : Array(6).fill(0).map((_, i) => <div key={i} className="skeleton" style={{ height: '240px', borderRadius: '12px' }} />)
@@ -104,12 +104,12 @@ export default function Home() {
       </section>
 
       {/* STATS + CASE STUDIES */}
-      <section style={{ padding: '100px 80px', background: 'var(--surface)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      <section className="pad-section-md" style={{ background: 'var(--surface)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
         <div className="section-inner">
           <p className="eyebrow">RESULTS</p>
           <h2 className="section-title" style={{ marginBottom: '72px' }}>Numbers that move markets.</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '40px', marginBottom: '80px', paddingBottom: '80px', borderBottom: '1px solid var(--glass-border)' }}>
+          <div className="grid-stats-4" style={{ marginBottom: '80px', paddingBottom: '80px', borderBottom: '1px solid var(--glass-border)' }}>
             {stats
               ? stats.map(s => <StatCounter key={s.id} {...s} />)
               : Array(4).fill(0).map((_, i) => <div key={i} className="skeleton" style={{ height: '100px' }} />)
@@ -117,7 +117,7 @@ export default function Home() {
           </div>
 
           <p className="eyebrow" style={{ marginBottom: '40px' }}>CASE STUDIES</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }}>
+          <div className="grid-cases-3">
             {cases
               ? cases.map(c => (
                 <div key={c.id} className="glass-card" style={{ padding: '40px' }}>
@@ -141,7 +141,7 @@ export default function Home() {
       <Marquee />
 
       {/* CTA BANNER */}
-      <section id="cta-banner" style={{ padding: '160px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section id="cta-banner" className="pad-section-cta" style={{ textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,122,0,.06) 0%, transparent 70%)' }} />
         <p className="eyebrow" style={{ position: 'relative', zIndex: 1 }}>INITIATE SEQUENCE</p>
         <h2 className="cta-title" style={{ fontFamily: 'var(--heading)', fontSize: 'clamp(40px,6vw,72px)', fontWeight: 700, color: '#fff', letterSpacing: '-2px', marginBottom: '48px', lineHeight: 1, position: 'relative', zIndex: 1 }}>

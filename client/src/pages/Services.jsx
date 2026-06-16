@@ -128,7 +128,7 @@ export default function Services() {
   return (
     <>
       {/* PAGE HEADER */}
-      <section style={{ padding: '180px 80px 100px', borderBottom: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden' }}>
+      <section className="pad-page-header" style={{ borderBottom: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,217,255,.05) 0%, transparent 60%)' }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p className="eyebrow">SERVICES / CAPABILITIES</p>
@@ -140,7 +140,7 @@ export default function Services() {
 
       {/* LOADING STATE */}
       {loading && (
-        <div style={{ padding: '120px 80px', maxWidth: '1400px', margin: '0 auto' }}>
+        <div className="pad-section" style={{ maxWidth: '1400px', margin: '0 auto' }}>
           {Array(4).fill(0).map((_, i) => (
             <div key={i} className="skeleton" style={{ height: '400px', marginBottom: '80px', borderRadius: '12px' }} />
           ))}
@@ -151,14 +151,10 @@ export default function Services() {
       {!loading && services?.map((s, i) => (
         <div
           key={s.id}
-          className="svc-block"
-          style={{ padding: '100px 80px', borderBottom: '1px solid var(--glass-border)', maxWidth: '1400px', margin: '0 auto' }}
+          className="svc-block pad-svc-block"
+          style={{ borderBottom: '1px solid var(--glass-border)', maxWidth: '1400px', margin: '0 auto' }}
         >
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '80px',
-            alignItems: 'center',
+          <div className="grid-2" style={{
             direction: i % 2 === 1 ? 'rtl' : 'ltr'
           }}>
             {/* TEXT SIDE */}

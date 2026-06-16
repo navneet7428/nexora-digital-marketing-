@@ -32,10 +32,10 @@ export default function StatCounter({ value, prefix = '', suffix = '', label, de
 
   return (
     <div ref={ref} style={{ textAlign: 'center' }}>
-      <div style={{ fontFamily: 'var(--mono)', fontSize: '64px', fontWeight: 700, color: '#fff', lineHeight: 1, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '2px' }}>
-        {prefix && <span style={{ color: 'var(--blue)', fontSize: '32px' }}>{prefix}</span>}
+      <div style={{ fontFamily: 'var(--mono)', fontSize: 'clamp(36px, 9vw, 64px)', fontWeight: 700, color: '#fff', lineHeight: 1, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '2px' }}>
+        {prefix && <span style={{ color: 'var(--blue)', fontSize: 'clamp(20px, 4.5vw, 32px)' }}>{prefix}</span>}
         <span>{display}</span>
-        {suffix && <span style={{ color: 'var(--blue)', fontSize: '32px' }}>{suffix}</span>}
+        {suffix && <span style={{ color: 'var(--blue)', fontSize: 'clamp(20px, 4.5vw, 32px)' }}>{suffix}</span>}
       </div>
       <p style={{ fontFamily: 'var(--body-font)', fontSize: '12px', color: 'var(--muted)', letterSpacing: '3px', textTransform: 'uppercase', marginTop: '12px' }}>{label}</p>
     </div>
